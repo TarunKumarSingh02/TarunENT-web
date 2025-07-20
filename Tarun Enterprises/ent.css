@@ -1,0 +1,259 @@
+:root {
+  --primary: #002b5b;
+  --accent: #ffb703;
+  --text: #222;
+  --section-bg: rgba(255, 255, 255, 0.95);
+  --section-text: #222;
+  --btn-text: #000;
+  --footer-bg: #002b5b;
+}
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background: url("bg-construction.jpg") center center/cover no-repeat fixed;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-title img {
+  width: 48px;
+  height: auto;
+}
+
+.logo-title span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--accent);
+}
+
+nav ul li a.active {
+  border-color: var(--accent);
+}
+
+/* Sections */
+section {
+  background: var(--section-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  margin: 2rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  max-width: 1000px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  color: var(--section-text);
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  background: transparent;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--btn-text);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e0a500;
+}
+
+/* Custom Bullet List */
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 2rem;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.custom-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Project Items */
+.project-item {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-left: 5px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-item p {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+section h3 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+/* Contact Info Box */
+.contact-info {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-left: 5px solid var(--primary);
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
